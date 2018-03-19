@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>坦克大战</title>
+		<link rel=stylesheet href="css/main.css" />
+		<script src="Common.js"></script>
+		<script src="TankObject.js"></script>
+		<script src="Mover.js"></script>
+		<script src="Tank.js"></script>
+		<script src="Frame.js"></script>
+		<script>
+			window.onload = function() {
+				// 调用游戏装载对象
+				var loader = new GameLoader();
+				loader.Begin();
+			}
+		</script>
+	</head>
+
+	<body>
+		<!--地图容器-->
+		<div id="divMap">
+		</div>
+		<div id="debugInfo">
+		</div>
+	</body>
+
+</html>

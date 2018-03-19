@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function run(){
+				var dateObj=new Date();
+				var timeStr=dateObj.getFullYear()+"年"+(dateObj.getMonth()+1)+"月"+dateObj.getDate()+"日   "+dateObj.getHours()+":"+dateObj.getMinutes()+":"+dateObj.getSeconds();
+				var objects=document.getElementsByTagName("p");
+				objects[0].innerHTML=timeStr;
+			}
+			setInterval("run()",1000);
+		</script>
+	</head>
+	<body>
+		<p align="center" style="margin-top: 50px; font-family:'楷体';font-size:1000%;color: red;"></p>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>选择框表单</title>
+	</head>
+
+	<body>
+		<form>
+			<select name="nation" id="nation">
+				<option>----请选择您的国家-----</option>
+				<option>中国</option>
+				<option>美国</option>
+				<option>韩国</option>
+
+			</select>
+			<select name="city" id="city">
+				<option>----请选择您所在的城市-----</option>
+			</select>
+		</form>
+
+		<script>
+			var nation = document.getElementById('nation');
+			var city = document.getElementById('city');
+			var aoption = nation.getElementsByTagName('option');
+			var boption = city.getElementsByTagName('option');
+			var arr = [
+				["北京", "上海", "深圳", "广州", "珠海"],
+				["纽约", "华盛顿", "洛杉矶", "芝加哥"],
+				["首尔", "釜山", "仁川"]
+			];
+			var s = 0;
+			nation.onchange = function() {
+				if(nation.selectedIndex == 0) {
+					fb();
+					fa('----请选择您所在的城市-----');
+				}
+				if(nation.selectedIndex == 1) {
+					fb();
+					for(var i = 0; i < arr[0].length; i++) {
+						s = arr[0][i];
+						fa(s);
+					}
+				}
+				if(nation.selectedIndex == 2) {
+					fb();
+					for(var i = 0; i < arr[1].length; i++) {
+						s = arr[1][i];
+						fa(s);
+					}
+				}
+				if(nation.selectedIndex == 3) {
+					fb();
+					for(var i = 0; i < arr[2].length; i++) {
+						s = arr[2][i];
+						fa(s);
+					}
+				}
+			}
+
+			function fa(s) {
+				var op = document.createElement('option');
+				var optext = document.createTextNode(s)
+				op.appendChild(optext);
+				city.appendChild(op);
+				// 
+			}
+
+			function fb() {
+				for(var k = 0; k < city.length;) {
+					city.removeChild(boption[0]);
+				}
+			}
+		</script>
+	</body>
+
+</html>
